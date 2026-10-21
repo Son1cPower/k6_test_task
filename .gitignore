@@ -1,0 +1,9 @@
+node_modules/
+.idea
+.vscode
+.env
+output.log
+config/envConfigs.ts
+testData/*/users.json
+results/*
+!results/.gitkeep
