@@ -2,9 +2,7 @@ import { OpenLoginPage } from './steps/auth/openLoginPage.ts';
 import { SubmitLogin } from './steps/auth/submitLogin.ts';
 import { GetIdentity } from './steps/accounts/getIdentity.ts';
 import { StartEnvironment } from './steps/environment/startEnvironment.ts';
-import { CreateJob } from './steps/execution/createJob.ts';
-import { ExecuteJob } from './steps/execution/executeJob.ts';
-import { WaitForJobCompletion } from './steps/execution/waitForJobCompletion.ts';
+import { RunWorkflowJob } from './steps/execution/runWorkflowJob.ts';
 import { DeleteTestJobs } from './steps/execution/deleteTestJobs.ts';
 
 class StepsManager {
@@ -12,9 +10,7 @@ class StepsManager {
   submitLogin: SubmitLogin = new SubmitLogin();
   getIdentity: GetIdentity = new GetIdentity();
   startEnvironment: StartEnvironment = new StartEnvironment();
-  createJob: CreateJob = new CreateJob();
-  executeJob: ExecuteJob = new ExecuteJob();
-  waitForJobCompletion: WaitForJobCompletion = new WaitForJobCompletion();
+  runWorkflowJob: RunWorkflowJob = new RunWorkflowJob();
   deleteTestJobs: DeleteTestJobs = new DeleteTestJobs();
 }
 

@@ -11,7 +11,7 @@ export const envConfigs = {
       id: '',
       executionContextId: '',
       pollIntervalSec: 2,
-      timeoutSec: 600,
+      timeoutSec: 180,
     },
   },
 };

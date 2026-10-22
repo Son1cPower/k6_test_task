@@ -118,3 +118,13 @@ k6 run --http-debug=full tests/scenarios/workflowExecutionScenario.ts
 | `LOAD`          | Load model (smoke / testload / burst / burstRamp / burstRate / load / stress / soak) | `smoke`    |
 | `THRESHOLD`     | Pass/fail criteria (smoke / burst / common)                                          | `smoke`    |
 | `ASYNC_LOADING` | Create jobs with `asyncLoading=true`                                                 | `false`    |
+
+---
+
+## AI Assistance
+
+[Claude Code] (Anthropic) was used as an assistant:
+
+- Code review
+- Complex functions
+- Consultations

@@ -44,19 +44,16 @@ export function setup() {
 export default function (data: SetupData) {
   http.cookieJar().set(API_URL, 'knime_hub_auth', data.sessionCookie);
 
-  const createdJobData = stepsManager.createJob.execute(WORKFLOW.id, WORKFLOW.executionContextId, ASYNC_LOADING);
-  if (!createdJobData.jobId) return;
-
-  const waitForJobCompletionData = stepsManager.waitForJobCompletion.execute(
-    createdJobData.jobId,
-    createdJobData.createdAt,
+  const runWorkflowJobData = stepsManager.runWorkflowJob.execute(
+    WORKFLOW.id,
+    WORKFLOW.executionContextId,
+    ASYNC_LOADING,
     WORKFLOW.pollIntervalSec,
     WORKFLOW.timeoutSec,
-    createdJobData,
   );
 }
 
 export function teardown(data: SetupData) {
-  http.cookieJar().set(API_URL, 'knime_hub_auth', data.sessionCookie);
+  loginScenario();
   const deleteTestJobsData = stepsManager.deleteTestJobs.execute(WORKFLOW.id, data.testStartedAt);
 }

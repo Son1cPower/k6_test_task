@@ -18,15 +18,6 @@ export class ExecutionService extends BaseRequestsService {
     });
   }
 
-  executeJob(jobId: string, params?: ExtendedParams) {
-    return this.post(`/execution/jobs/${jobId}`, null, {
-      requestName: 'POST /execution/jobs/{id}',
-      ...params,
-      queryParams: { async: true, ...params?.queryParams },
-      headers: { ...JSON_HEADERS, ...params?.headers },
-    });
-  }
-
   getJob(jobId: string, params?: ExtendedParams) {
     return this.get(`/execution/jobs/${jobId}`, {
       requestName: 'GET /execution/jobs/{id}',
